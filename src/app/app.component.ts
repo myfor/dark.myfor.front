@@ -35,8 +35,8 @@ export class AppComponent implements OnInit {
     // this.currentTime = dateTime.toString();
 
     //  开放时间
-    // if (this.hour >= 6) {
-    if (this.hour >= 0 && this.hour < 6) {
+    if (this.hour >= 6) {
+    // if (this.hour >= 0 && this.hour < 6) {
       if (!this.isOpen) {
         this.isOpen = true;
       }

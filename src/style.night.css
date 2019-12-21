@@ -3,18 +3,22 @@
   background-color: #000;
 }
 
-.night>* {
-  color: #e0e0e0;
+.night * {
+  color: #FFF;
 }
 
-.night>h1 {
-  color: #F90;
+.night h1 {
+  color: #F90 !important;
 }
 
-.night>h2 {
-  color: #b76e00;
+.night h2 {
+  color: #b76e00 !important;
 }
 
-.night>small {
-  color: #b76e00;
+.night small {
+  color: #b76e00 !important;
+}
+
+.night hr {
+  border-color: #8e5500;
 }

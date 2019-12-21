@@ -1,1 +1,25 @@
 /* You can add global styles to this file, and also import other style files */
+@import './style.day.css';
+@import './style.night.css';
+
+html {
+  font-size: 16px;
+  height: 100%;
+  margin-top: -21px;
+}
+
+body {
+  height: 100%;
+  margin: 0;
+}
+
+.current-time {
+  text-align: center;
+  padding: 1rem 0rem;
+}
+
+.open-time {
+  text-align: center;
+  padding: 1rem 0rem;
+  margin-top: 5rem
+}

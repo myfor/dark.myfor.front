@@ -1,0 +1,11 @@
+<div [class]="isOpen ? 'night' : 'day'">
+  <h1 class="current-time">{{currentTime}}</h1>
+
+  <div *ngIf="isOpen">
+    
+  </div>
+  <h1 class="open-time" *ngIf="!isOpen">
+    00:00 - 05:59
+  </h1>
+
+</div>

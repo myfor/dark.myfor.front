@@ -13,13 +13,13 @@ import { NewPostComponent } from './new-post/new-post.component';
   declarations: [
     AppComponent,
     PostsComponent,
-    NewPostComponent,
-    FormsModule,
-    ReactiveFormsModule
+    NewPostComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [
     HTTP_INTERCEPTOR_PROVIDERS

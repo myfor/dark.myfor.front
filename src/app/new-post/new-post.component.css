@@ -1,0 +1,36 @@
+.fom-new {
+  display: flex;
+  justify-content: center;
+}
+
+.fom-new-lbl {
+  display: flex;
+  flex-direction: column;
+  margin-right: .5rem;
+}
+
+.fom-new-lbl * {
+  color: #F90;
+}
+
+.fom-new-lbl>label {
+  width: 100px;
+  padding: .2rem 0rem;
+  margin-bottom: .3rem;
+  border: 1px solid #F90;
+}
+
+.fom-new-txt {
+  display: flex;
+  flex-direction: column;
+}
+
+.fom-new-txt input {
+  color: #000;
+  margin-bottom: .7rem;
+}
+
+.fom-new-txt textarea {
+  color: #000;
+  margin-bottom: .7rem;
+}

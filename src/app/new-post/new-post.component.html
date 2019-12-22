@@ -1,5 +1,18 @@
 <div>
-  <form>
-    
+  <form [formGroup]="newPostForm">
+    <div class="fom-new">
+      <div class="fom-new-lbl">
+        <label for="txt_nickName">昵称</label>
+        <label for="txt_content">内容</label>
+      </div>
+      <div class="fom-new-txt">
+        <input type="text" id="txt_nickName" formControlName="nickName" placeholder="昵称 NickName">
+        <textarea id="" cols="30" rows="6" placeholder="内容 Content"></textarea>
+      </div>
+    </div>
+    <div>
+      <label for="txt_img">图片</label>
+
+    </div>
   </form>
 </div>

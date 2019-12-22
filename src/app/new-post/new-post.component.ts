@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-new-post',
@@ -7,7 +8,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NewPostComponent implements OnInit {
 
-  constructor() { }
+  newPostForm = this.fb.group({
+    nickName: ['', [Validators.required]],
+    content: ['', [Validators.required, Validators.minLength(8)]]
+  });
+
+  constructor(
+    private fb: FormBuilder
+  ) { }
 
   ngOnInit() {
   }

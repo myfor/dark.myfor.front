@@ -7,7 +7,7 @@
       </div>
       <div class="fom-new-txt">
         <input type="text" id="txt_nickName" formControlName="nickName" placeholder="昵称 NickName">
-        <textarea id="txt_content" cols="30" rows="6" placeholder="内容 Content"></textarea>
+        <textarea id="txt_content" cols="30" rows="6" formControlName="content" placeholder="内容 Content"></textarea>
       </div>
     </div>
     <div class="div-img-box">
@@ -15,12 +15,11 @@
         <label class="lbl-img" for="txt_img">图片</label>
       </div>
       <div class="div-img-preview">
-        <preview-image maxWidth="250px"></preview-image>
+        <preview-image maxWidth="250px" (fileChangeEvent)="fileChange($event)"></preview-image>
       </div>
-      <!-- <input class="fil-img" type="file"> -->
     </div>
     <div class="div-action">
-      <button class="btn" type="button">提交</button>
+      <button class="btn" type="button" (click)="submit()">提交</button>
     </div>
   </form>
 </div>

@@ -28,3 +28,18 @@ body {
   padding: 1rem 0rem;
   margin-top: 5rem
 }
+
+.mf-tip {
+  position: fixed;
+  top: 40%;
+  left: 45%;
+  padding: 6px 20px;
+  /* background-color: #000; */
+  opacity: .8;
+  /* color: white;
+  box-shadow: 0px 5px 4px -2px #666; */
+  border-radius: 2px;
+  background-color: #d37f00;
+  color: black;
+  box-shadow: 0px 0px 15px 5px #fda82a;
+}

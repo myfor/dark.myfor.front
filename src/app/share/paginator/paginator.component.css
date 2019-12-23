@@ -1,0 +1,23 @@
+.paginator-box {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.spn-page-index {
+  cursor: pointer;
+  color: blue;
+  margin: 0rem .2rem;
+}
+
+.page-active {
+  cursor: text !important;
+  margin: 0rem .3rem;
+}
+
+.btn-sub {
+  cursor: pointer;
+}
+
+.btn-sub:disabled {
+  cursor: default;
+}

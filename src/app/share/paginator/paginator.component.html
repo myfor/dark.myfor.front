@@ -1,1 +1,14 @@
-<p>paginator works!</p>
+<div class="paginator-box">
+  <button class="btn-sub" (click)="prePage()" [disabled]="!hasPre">上一页</button>
+  <!-- <div *ngIf="showFirstPage">
+    <span class="spn-page-index" (click)="changePage(1)">[1]</span>
+    <span>......</span>
+  </div> -->
+  <span class="spn-page-index" [class.page-active]="currentIndex === pageIndex" *ngFor="let pageIndex of showablePage"
+    (click)="changePage(pageIndex)">[{{pageIndex}}]</span>
+  <!-- <div *ngIf="showLastPage">
+    <span>......</span>
+    <span class="spn-page-index" (click)="changePage(totalPages)">[{{totalPages}}]</span>
+  </div> -->
+  <button class="btn-sub" (click)="nextPage()" [disabled]="!hasNext">下一页</button>
+</div>

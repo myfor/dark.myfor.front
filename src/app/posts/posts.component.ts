@@ -7,9 +7,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PostsComponent implements OnInit {
 
+  totalRows = 200;
+
   constructor() { }
 
   ngOnInit() {
   }
 
+  changePage(index: number) {
+    console.log(index);
+  }
 }

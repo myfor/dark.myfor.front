@@ -1,20 +1,28 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { PaginatorComponent } from './paginator/paginator.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
-const EXPROTS_COMPONENT = [
+const EXPORTS_COMPONENT = [
   PaginatorComponent
+];
+
+const EXPORTS_MODULE = [
+  FormsModule,
+  ReactiveFormsModule
 ];
 
 @NgModule({
   declarations: [
-    ...EXPROTS_COMPONENT
+    ...EXPORTS_COMPONENT
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    ...EXPORTS_MODULE
   ],
   exports: [
-    ...EXPROTS_COMPONENT
+    ...EXPORTS_COMPONENT,
+    ...EXPORTS_MODULE
   ]
 })
 export class ShareModule { }

@@ -42,9 +42,16 @@
 }
 
 .div-img {
+  display: flex;
+  height: 34px;
   width: 100px;
   padding: .2rem 0rem;
   margin-bottom: .3rem;
+}
+
+.div-img-preview {
+  width: 235px;
+  margin-left: .4rem;
 }
 
 .lbl-img {

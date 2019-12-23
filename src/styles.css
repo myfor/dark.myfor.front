@@ -13,6 +13,11 @@ body {
   margin: 0;
 }
 
+.btn {
+  cursor: pointer;
+  padding: .5rem 1rem;
+}
+
 .current-time {
   text-align: center;
   padding: 1rem 0rem;

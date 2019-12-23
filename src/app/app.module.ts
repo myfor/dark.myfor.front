@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { HTTP_INTERCEPTOR_PROVIDERS } from './interceptors/barrel';
 
@@ -18,7 +19,9 @@ import { NewPostComponent } from './new-post/new-post.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [
     HTTP_INTERCEPTOR_PROVIDERS

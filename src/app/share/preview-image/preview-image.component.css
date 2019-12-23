@@ -1,0 +1,19 @@
+.div-preview-image {
+  margin-bottom: 2rem;
+}
+
+.div-preview {
+  padding: .1rem;
+  margin: .2rem 0;
+}
+
+.div-preview>img {
+  border: 1px solid #cecece;
+  padding: .2rem;
+}
+
+.inp-file {
+  width: 100%;
+  margin: .5rem 0;
+  border-bottom: 1px solid #8e8e8e;
+}

@@ -34,3 +34,28 @@
   color: #000;
   margin-bottom: .7rem;
 }
+
+.div-img-box {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.div-img {
+  width: 100px;
+  padding: .2rem 0rem;
+  margin-bottom: .3rem;
+}
+
+.lbl-img {
+  color: #F90;
+  width: 100px;
+  padding: .2rem 0rem;
+  margin-bottom: .3rem;
+  border: 1px solid #F90;
+}
+
+.fil-img {
+  width: 235px;
+  margin-left: .5rem;
+}

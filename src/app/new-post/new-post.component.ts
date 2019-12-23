@@ -8,6 +8,8 @@ import { FormBuilder, Validators } from '@angular/forms';
 })
 export class NewPostComponent implements OnInit {
 
+  showPreview = false;
+
   newPostForm = this.fb.group({
     nickName: ['', [Validators.required]],
     content: ['', [Validators.required, Validators.minLength(8)]]

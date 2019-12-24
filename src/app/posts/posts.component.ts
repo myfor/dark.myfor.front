@@ -54,6 +54,7 @@ export class PostsComponent implements OnInit {
       item.img.style = this.previewable;
       item.comments = this.setCommentList(item.comments);
       item.hasMoreComments = item.comments.length >= 5;
+      item.showReplyBox = false;
     });
     this.list = posts;
   }
@@ -69,6 +70,13 @@ export class PostsComponent implements OnInit {
       });
     });
     return comments;
+  }
+
+  /**
+   * 触发回复框
+   */
+  triggerReplyBox(i: number) {
+    this.list[i].showReplyBox = !this.list[i].showReplyBox;
   }
 
   /**

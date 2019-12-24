@@ -55,3 +55,9 @@
   color: #FFF !important;
 }
 
+.night .div-comment-new {
+  width: fit-content;
+  padding: .5rem 1rem;
+  margin: 1rem 1.5rem;
+  border: 1px solid #F90;
+}

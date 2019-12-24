@@ -1,0 +1,26 @@
+<div>
+    <form [formGroup]="newCommentForm">
+      <div class="fom-new">
+        <div class="fom-new-lbl">
+          <label>昵称</label>
+          <label>内容</label>
+        </div>
+        <div class="fom-new-txt">
+          <input type="text" formControlName="nickName" placeholder="昵称 NickName">
+          <textarea cols="30" rows="6" formControlName="content" placeholder="内容 Content"></textarea>
+        </div>
+      </div>
+      <div class="div-img-box">
+        <div class="div-img">
+          <label class="lbl-img" for="txt_img">图片</label>
+        </div>
+        <div class="div-img-preview">
+          <preview-image maxWidth="250px" maxHeight="190px" (fileChangeEvent)="fileChange($event)"></preview-image>
+        </div>
+      </div>
+      <div class="div-action">
+        <button class="btn" type="button" (click)="submit()">提交</button>
+      </div>
+    </form>
+  </div>
+  

@@ -8,12 +8,14 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { PostsComponent } from './posts/posts.component';
 import { NewPostComponent } from './new-post/new-post.component';
+import { NewCommentComponent } from './new-comment/new-comment.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     PostsComponent,
-    NewPostComponent
+    NewPostComponent,
+    NewCommentComponent
   ],
   imports: [
     BrowserModule,

@@ -2,7 +2,7 @@
   <div>
     <div class="div-list-item" *ngFor="let post of list; let i = index">
       <div class="div-item-name">
-        <span class="name" title="回复">{{post.nickName}}</span>
+        <span class="name" title="回复" (click)="triggerReplyBox(i)">{{post.nickName}}</span>
         <div class="time">from: {{post.date}}</div>
       </div>
       <div class="div-content">
@@ -12,10 +12,10 @@
           {{post.content}}
         </div>
       </div>
-      
-      <!-- 回复 -->
-      <div>
 
+      <!-- 回复 -->
+      <div class="div-comment-new" *ngIf="post.showReplyBox">
+        <app-new-comment></app-new-comment>
       </div>
 
       <!-- 评论 -->

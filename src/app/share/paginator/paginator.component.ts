@@ -49,8 +49,10 @@ export class PaginatorComponent {
    * 获取总页数
    */
   get totalPages(): number {
-    return this._totalRows % this._rows === 0 ?
+    // tslint:disable-next-line: variable-name
+    const _totalPages = this._totalRows % this._rows === 0 ?
       this._totalRows / this._rows : this._totalRows / this._rows + 1;
+    return Math.floor(_totalPages);
   }
   /**
    * 可显示的页码数组
@@ -65,35 +67,28 @@ export class PaginatorComponent {
   private setShowablePage() {
     this.showablePage = [];
     let increment = 0;
+    //  页码只能显示 10 页
+    const SHOWABLE_PAGE_COUNT = 10;
 
     if (this.currentIndex <= 6) {
-      for (let i = 1; i <= 10; i++) {
+      for (let i = 1; i <= SHOWABLE_PAGE_COUNT; i++) {
         if (i > this.totalPages) {
           return;
         }
         this.showablePage.push(i);
       }
     } else {
-      for (let i = 0; i < 10; i++) {
-        increment = this.currentIndex + i - 4;
+      const LESS = 4;
+      // const LESS = this.currentIndex - this.totalPages % SHOWABLE_PAGE_COUNT - 1;
+      // console.log(`LESS: ${LESS} = currentIndex: ${this.currentIndex} - totalPages: ${this.totalPages}`);
+      for (let i = 0; i < SHOWABLE_PAGE_COUNT; i++) {
+        increment = this.currentIndex + i - LESS;
         if (increment > this.totalPages) {
-          return;
+          break;
         }
         this.showablePage.push(increment);
       }
     }
-    // console.log('first: ' + this.showablePage[0]);
-    // if (this.showablePage[0] !== 1) {
-    //   this.showFirstPage = true;
-    // } else {
-    //   this.showFirstPage = false;
-    // }
-    // console.log('last: ' + this.showablePage[this.showablePage.length]);
-    // if (this.showablePage[this.showablePage.length] !== this.totalPages) {
-    //   this.showLastPage = true;
-    // } else {
-    //   this.showLastPage = false;
-    // }
   }
 
   /**

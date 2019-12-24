@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { PostsService } from '../services/posts.service';
 
 @Component({
   selector: 'app-posts',
@@ -7,14 +8,29 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PostsComponent implements OnInit {
 
-  totalRows = 200;
+  list = [];
+  private index = 1;
+  totalRows = 400;
 
-  constructor() { }
+  constructor(
+    private post: PostsService
+  ) { }
 
   ngOnInit() {
+    this.getList();
   }
 
+  private getList() {
+
+  }
+
+  /**
+   * 改变页码
+   * @param index 页码
+   */
   changePage(index: number) {
     console.log(index);
+    this.index = index;
+    this.getList();
   }
 }

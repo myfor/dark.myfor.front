@@ -1,2 +1,9 @@
-<p>posts works!</p>
-<app-paginator (pageIndex)="changePage($event)" [totalRows]="totalRows"></app-paginator>
+<div>
+  <div>
+    <div *ngFor="let item of list">
+      <hr>
+
+    </div>
+  </div>
+  <app-paginator (pageIndex)="changePage($event)" [totalRows]="totalRows"></app-paginator>
+</div>

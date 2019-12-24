@@ -10,6 +10,7 @@ export class PostsComponent implements OnInit {
 
   list = [];
   private index = 1;
+  private readonly rows = 20;
   totalRows = 400;
 
   constructor(

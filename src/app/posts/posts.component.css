@@ -1,32 +1,39 @@
+.div-base {
+  padding: 0 1rem 3rem 1rem;
+}
+
 .div-list-item {
   display: flex;
   flex-direction: column;
-  width: 100%;
   padding: .3rem;
   margin: .3rem 0rem;
   border: 1px solid #F90;
-  /* border-left: 1px solid #F90;
-  border-right: 1px solid #F90; */
 }
 
 .div-item-name {
   display: flex;
-  color: #F90;
   margin-bottom: 1rem;
 }
 
-.div-item-name>.time {
+.div-item-name>.name {
+  color: #F90;
+  cursor: pointer;
+}
+
+.time {
   color: #bb7000;
   margin-left: 1rem;
 }
 
 .div-content {
   display: flex;
-  flex-direction: row;
-  max-width: 800px;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  /* max-width: 800px; */
 }
 
 .div-content>.div-item-content {
+  width: 80%;
   font-size: .9rem;
 }
 
@@ -36,13 +43,17 @@
 
 .div-comment-list>.div-comment {
   display: flex;
+  flex-wrap: wrap;
+  width: fit-content;
+  align-items: flex-start;
   padding: .3rem;
-  margin: .2rem 0;
+  margin: .2rem 0 .2rem .5rem;
   border: 1px solid #F90;
 }
 
 .div-comment>.div-comment-centent {
   font-size: .9rem;
+  width: 400px;
   margin: 0 .5rem;
 }
 

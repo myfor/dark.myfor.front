@@ -13,6 +13,7 @@
 }
 
 .inp-file {
+  cursor: pointer;
   width: 100%;
   margin: .5rem 0;
   border-bottom: 1px solid #8e8e8e;

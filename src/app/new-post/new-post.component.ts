@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { SnackBarService } from '../share/service/snack-bar.service';
+import { NewPost, PostsService } from '../services/posts.service';
 
 @Component({
   selector: 'app-new-post',
@@ -22,7 +23,8 @@ export class NewPostComponent implements OnInit {
 
   constructor(
     private fb: FormBuilder,
-    private snack: SnackBarService
+    private snack: SnackBarService,
+    private post: PostsService
   ) { }
 
   ngOnInit() {
@@ -41,5 +43,18 @@ export class NewPostComponent implements OnInit {
       this.snack.open('内容最少 8 个字');
       return;
     }
+
+    const info: NewPost = {
+      nickName: this.newPostForm.get('nickName').value,
+      content: this.newPostForm.get('content').value,
+      img: this.img
+    };
+    this.post.newPost(info)
+      .subscribe((data) => {
+        if (data.isFault) {
+          this.snack.open('提交失败');
+          return;
+        }
+      });
   }
 }

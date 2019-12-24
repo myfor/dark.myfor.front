@@ -36,6 +36,7 @@
 .div-content>.div-item-content {
   width: 80%;
   font-size: .9rem;
+  margin: 0 .3rem;
 }
 
 .div-comment-list {
@@ -45,7 +46,7 @@
 .div-comment-list>.div-comment {
   display: flex;
   flex-wrap: wrap;
-  width: fit-content;
+  /* width: fit-content; */
   align-items: flex-start;
   padding: .3rem;
   margin: .2rem 0 .2rem .5rem;

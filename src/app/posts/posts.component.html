@@ -1,44 +1,31 @@
 <div class="div-base">
   <div>
-    <div class="div-list-item">
+    <div class="div-list-item" *ngFor="let post of list; let i = index">
       <div class="div-item-name">
-        <span class="name" title="回复">匿名</span>
-        <div class="time">from: 00:15</div>
+        <span class="name" title="回复">{{post.nickName}}</span>
+        <div class="time">from: {{post.date}}</div>
       </div>
       <div class="div-content">
-        <img src="assets/img/战双-帕泥什.png" alt="图片">
+        <img class="{{post.img.style}}" src="{{post.img.current}}" alt="图片" (click)="changePostImg(i)">
         <div class="div-item-content">
-          日前，广东省交易控股集团倾力打造的集信息共享、业务融合、资源汇集等功能为一体的产权交易统一信息平台——“交e汇”（http://mall.gdaee.com.cn）正式上线运行。
-          日前，广东省交易控股集团倾力打造的集信息共享、业务融合、资源汇集等功能为一体的产权交易统一信息平台——“交e汇”（http://mall.gdaee.com.cn）正式上线运行。
-          日前，广东省交易控股集团倾力打造的集信息共享、业务融合、资源汇集等功能为一体的产权交易统一信息平台——“交e汇”（http://mall.gdaee.com.cn）正式上线运行。
-          日前，广东省交易控股集团倾力打造的集信息共享、业务融合、资源汇集等功能为一体的产权交易统一信息平台——“交e汇”（http://mall.gdaee.com.cn）正式上线运行。
+          {{post.content}}
         </div>
       </div>
+      <!-- 评论 -->
       <div class="div-comment-list">
-        <div class="div-comment">
-          <img src="assets/img/战双-帕泥什.png" alt="图片">
+        <div class="div-comment" *ngFor="let comment of post.comments; let commentIndex = index">
+          <img class="{{img.style}}" *ngFor="let img of comment.imgs; let imgIndex = index" src="{{img.current}}"
+            alt="图片" (click)="changeCommentImg(i, commentIndex, imgIndex)">
           <div class="div-comment-centent">
-            <p class="div-item-name">匿名
-              <span class="time">from: 00:20</span>
+            <p class="div-item-name">{{comment.nickName}}
+              <span class="time">from: {{comment.date}}</span>
             </p>
-            “交e汇”统一平台紧紧围绕建设服务粤港澳大湾区战略的金融基础设施，构建统一的非标资本市场和要素资源市
-            场化配置与交易平台的总体目标规划设计，立足广东，面向全国，辐射粤港澳大湾区以及“一带一路”沿线，是打造大湾区乃至更
-            加国际化的产权交易资本市场网上信息化高速公路的“关键一招”和重要抓手。
+            {{comment.content}}
           </div>
         </div>
-        <div class="div-comment">
-          <img src="assets/img/战双-帕泥什.png" alt="图片">
-          <div class="div-comment-centent">
-            <p class="div-item-name">匿名
-              <span class="time">from: 00:20</span>
-            </p>
-            “交e汇”统一平台紧紧围绕建设服务粤港澳大湾区战略的金融基础设施，构建统一的非标资本市场和要素资源市
-            场化配置与交易平台的总体目标规划设计，立足广东，面向全国，辐射粤港澳大湾区以及“一带一路”沿线，是打造大湾区乃至更
-            加国际化的产权交易资本市场网上信息化高速公路的“关键一招”和重要抓手。
-          </div>
-        </div>
-        <a href="javascript:;" class="a-more-comments">展开评论</a> 
+        <a href="javascript:;" class="a-more-comments" (click)="allComments(post.id, i)">展开评论</a>
       </div>
+
     </div>
   </div>
   <app-paginator (pageIndex)="changePage($event)" [totalRows]="totalRows"></app-paginator>

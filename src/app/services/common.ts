@@ -18,14 +18,18 @@ export interface Result < T = any > {
    */
   isFault: boolean;
 }
-/**
- * 评论
- */
-export interface Comment {
-  id: number;
-  nickName: string;
-  date: string;
-  content: string;
+
+export interface Img {
+  /**
+   * 当前显示的图片
+   */
+  current: string;
+  /**
+   * 样式
+   */
+  style: string;
+  thumbnail: string;
+  source: string;
 }
 
 /**

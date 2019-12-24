@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { PaginatorComponent } from './paginator/paginator.component';
 import { PreviewImageComponent } from './preview-image/preview-image.component';
@@ -11,7 +12,8 @@ const EXPORTS_COMPONENT = [
 
 const EXPORTS_MODULE = [
   FormsModule,
-  ReactiveFormsModule
+  ReactiveFormsModule,
+  HttpClientModule
 ];
 
 @NgModule({

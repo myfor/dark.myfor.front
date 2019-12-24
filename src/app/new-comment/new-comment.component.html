@@ -15,11 +15,11 @@
           <label class="lbl-img" for="txt_img">图片</label>
         </div>
         <div class="div-img-preview">
-          <preview-image maxWidth="250px" maxHeight="190px" (fileChangeEvent)="fileChange($event)"></preview-image>
+          <preview-image maxWidth="250px" maxHeight="140px" (fileChangeEvent)="fileChange($event)"></preview-image>
         </div>
       </div>
       <div class="div-action">
-        <button class="btn" type="button" (click)="submit()">提交</button>
+        <button class="btn" type="button" #commentBtn (click)="submit($event)">提交</button>
       </div>
     </form>
   </div>

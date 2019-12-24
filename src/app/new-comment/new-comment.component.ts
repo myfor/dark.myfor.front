@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { SnackBarService } from '../share/service/snack-bar.service';
+import { timer } from 'rxjs';
 
 @Component({
   selector: 'app-new-comment',
@@ -14,6 +15,7 @@ export class NewCommentComponent implements OnInit {
    * 图片
    */
   img: any;
+  @ViewChild('commentBtn', { static: false }) commentBtn: ElementRef;
 
   newCommentForm = this.fb.group({
     nickName: ['', [Validators.required]],
@@ -32,15 +34,20 @@ export class NewCommentComponent implements OnInit {
     this.img = selectedFile;
   }
 
-  submit() {
+  submit(btn: any) {
     if (this.newCommentForm.get('nickName').invalid) {
       this.snack.open('昵称不能为空');
       return;
     }
     if (this.newCommentForm.get('content').invalid) {
-      this.snack.open('内容最少 8 个字');
+      this.snack.open('评论内容最少 4 个字');
       return;
     }
+
+    this.commentBtn.nativeElement.disabled = true;
+    timer(3000).subscribe(() => {
+      this.commentBtn.nativeElement.disabled = false;
+    });
 
   }
 }

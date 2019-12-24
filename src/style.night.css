@@ -37,6 +37,11 @@
   border: 1px solid #F90;
 }
 
+.btn:disabled {
+  background-color: #888;
+  cursor: default;
+}
+
 .night .btn-sub {
   color: #F90;
   background-color: #FFFFFF00;

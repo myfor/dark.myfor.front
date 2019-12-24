@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { SnackBarService } from '../share/service/snack-bar.service';
 import { NewPost, PostsService } from '../services/posts.service';
+import { timer } from 'rxjs';
 
 @Component({
   selector: 'app-new-post',
@@ -15,6 +16,7 @@ export class NewPostComponent implements OnInit {
    * 图片
    */
   img: any;
+  @ViewChild('postBtn', { static: false }) postBtn: ElementRef;
 
   newPostForm = this.fb.group({
     nickName: ['', [Validators.required]],
@@ -44,6 +46,11 @@ export class NewPostComponent implements OnInit {
       return;
     }
 
+    this.postBtn.nativeElement.disabled = true;
+    timer(3000).subscribe(() => {
+      this.postBtn.nativeElement.disabled = false;
+    });
+
     const info: NewPost = {
       nickName: this.newPostForm.get('nickName').value,
       content: this.newPostForm.get('content').value,
@@ -55,6 +62,8 @@ export class NewPostComponent implements OnInit {
           this.snack.open('提交失败');
           return;
         }
+        this.snack.open('提交成功');
+        location.reload();
       });
   }
 }

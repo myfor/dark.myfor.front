@@ -15,20 +15,76 @@
           "source": "assets/img/dg.gif"
         },
         "comments": [{
-          "nickName": "匿名评论",
-          "content": "匿名评论内容",
-          "date": "01:45",
-          "imgs": [
-            {
-              "thumbnail": "assets/img/战双-帕泥什.png",
-              "source": "assets/img/dg.gif"
-            },
-            {
-              "thumbnail": "assets/img/战双-帕泥什.png",
-              "source": "assets/img/dg.gif"
-            }
-          ]
-        }]
+            "nickName": "匿名评论",
+            "content": "匿名评论内容",
+            "date": "01:45",
+            "imgs": [{
+                "thumbnail": "assets/img/战双-帕泥什.png",
+                "source": "assets/img/dg.gif"
+              },
+              {
+                "thumbnail": "assets/img/战双-帕泥什.png",
+                "source": "assets/img/dg.gif"
+              }
+            ]
+          },
+          {
+            "nickName": "匿名评论",
+            "content": "匿名评论内容",
+            "date": "01:45",
+            "imgs": [{
+                "thumbnail": "assets/img/战双-帕泥什.png",
+                "source": "assets/img/dg.gif"
+              },
+              {
+                "thumbnail": "assets/img/战双-帕泥什.png",
+                "source": "assets/img/dg.gif"
+              }
+            ]
+          },
+          {
+            "nickName": "匿名评论",
+            "content": "匿名评论内容",
+            "date": "01:45",
+            "imgs": [{
+                "thumbnail": "assets/img/战双-帕泥什.png",
+                "source": "assets/img/dg.gif"
+              },
+              {
+                "thumbnail": "assets/img/战双-帕泥什.png",
+                "source": "assets/img/dg.gif"
+              }
+            ]
+          },
+          {
+            "nickName": "匿名评论",
+            "content": "匿名评论内容",
+            "date": "01:45",
+            "imgs": [{
+                "thumbnail": "assets/img/战双-帕泥什.png",
+                "source": "assets/img/dg.gif"
+              },
+              {
+                "thumbnail": "assets/img/战双-帕泥什.png",
+                "source": "assets/img/dg.gif"
+              }
+            ]
+          },
+          {
+            "nickName": "匿名评论",
+            "content": "匿名评论内容",
+            "date": "01:45",
+            "imgs": [{
+                "thumbnail": "assets/img/战双-帕泥什.png",
+                "source": "assets/img/dg.gif"
+              },
+              {
+                "thumbnail": "assets/img/战双-帕泥什.png",
+                "source": "assets/img/dg.gif"
+              }
+            ]
+          }
+        ]
       },
       {
         "id": 2,
@@ -43,8 +99,7 @@
           "nickName": "匿名评论",
           "content": "匿名评论内容",
           "date": "01:45",
-          "imgs": [
-            {
+          "imgs": [{
               "thumbnail": "assets/img/战双-帕泥什.png",
               "source": "assets/img/dg.gif"
             },

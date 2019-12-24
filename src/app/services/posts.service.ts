@@ -18,6 +18,7 @@ export interface PostItem {
   content: string;
   img: Img;
   comments: CommentItem[];
+  hasMoreComments: boolean;
 }
 
 @Injectable({

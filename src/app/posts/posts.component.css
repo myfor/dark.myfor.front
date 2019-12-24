@@ -46,7 +46,6 @@
 .div-comment-list>.div-comment {
   display: flex;
   flex-wrap: wrap;
-  /* width: fit-content; */
   align-items: flex-start;
   padding: .3rem;
   margin: .2rem 0 .2rem .5rem;
@@ -55,7 +54,6 @@
 
 .div-comment>.div-comment-centent {
   font-size: .9rem;
-  width: 400px;
   margin: 0 .5rem;
 }
 

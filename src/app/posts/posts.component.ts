@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { PostsService, PostItem } from '../services/posts.service';
 import { SnackBarService } from '../share/service/snack-bar.service';
-import { CommentItem } from '../services/comments.service';
+import { CommentItem, CommentsService } from '../services/comments.service';
 
 @Component({
   selector: 'app-posts',
@@ -14,9 +14,18 @@ export class PostsComponent implements OnInit {
   private index = 1;
   private readonly rows = 20;
   totalRows = 0;
+  /**
+   * 图片可放大
+   */
+  private readonly previewable = 'previewable';
+  /**
+   * 图片可缩小
+   */
+  private readonly shrinkable = 'shrinkable';
 
   constructor(
     private post: PostsService,
+    private comment: CommentsService,
     private snack: SnackBarService
   ) { }
 
@@ -42,8 +51,9 @@ export class PostsComponent implements OnInit {
   private setPostList(posts: PostItem[]) {
     posts.forEach(item => {
       item.img.current = item.img.thumbnail;
-      item.img.style = 'previewable';
+      item.img.style = this.previewable;
       item.comments = this.setCommentList(item.comments);
+      item.hasMoreComments = item.comments.length >= 5;
     });
     this.list = posts;
   }
@@ -55,7 +65,7 @@ export class PostsComponent implements OnInit {
     comments.forEach(comment => {
       comment.imgs.forEach(img => {
         img.current = img.thumbnail;
-        img.style = 'previewable';
+        img.style = this.previewable;
       });
     });
     return comments;
@@ -77,7 +87,7 @@ export class PostsComponent implements OnInit {
    */
   changePostImg(i: number) {
     const post = this.list[i];
-    post.img.style = post.img.style === 'previewable' ? 'shrinkable' : 'previewable';
+    post.img.style = post.img.style === this.previewable ? this.shrinkable : this.previewable;
     post.img.current = post.img.current === post.img.source ? post.img.thumbnail : post.img.source;
   }
   /**
@@ -88,7 +98,7 @@ export class PostsComponent implements OnInit {
    */
   changeCommentImg(i: number, commentIndex: number, imgIndex: number) {
     const img = this.list[i].comments[commentIndex].imgs[imgIndex];
-    img.style = img.style === 'previewable' ? 'shrinkable' : 'previewable';
+    img.style = img.style === this.previewable ? this.shrinkable : this.previewable;
     img.current = img.current === img.source ? img.thumbnail : img.source;
   }
   /**
@@ -96,10 +106,17 @@ export class PostsComponent implements OnInit {
    * @param id 帖子 ID
    */
   allComments(id: number, index: number) {
-    console.log(`${id} - ${index}`);
-
-    if (this.list[index]) {
-      // this.list[index].comments = this.setCommentList();
+    // console.log(`${id} - ${index}`);
+    const thisPost = this.list[index];
+    if (thisPost) {
+      this.comment.getAllComments(id)
+        .subscribe((data) => {
+          if (data.isFault) {
+            this.snack.open('获取评论失败');
+          }
+          thisPost.comments = this.setCommentList(data.data);
+          thisPost.hasMoreComments = false;
+        });
     }
   }
 }

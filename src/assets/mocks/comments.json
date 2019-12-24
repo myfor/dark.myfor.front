@@ -1,0 +1,27 @@
+{
+  "message": "成功",
+  "data": [{
+      "nickName": "匿名评论者",
+      "content": "匿名评论内容匿名评论内容匿名评论内容匿名评论内容",
+      "date": "05:00",
+      "imgs": [{
+        "thumbnail": "assets/img/战双-帕泥什.png",
+        "source": "assets/img/dg.gif"
+      }]
+    },
+    {
+      "nickName": "匿名评论者",
+      "content": "匿名评论内容匿名评论内容匿名评论内容匿名评论内容",
+      "date": "05:00",
+      "imgs": [{
+          "thumbnail": "assets/img/战双-帕泥什.png",
+          "source": "assets/img/dg.gif"
+        },
+        {
+          "thumbnail": "assets/img/战双-帕泥什.png",
+          "source": "assets/img/dg.gif"
+        }
+      ]
+    }
+  ]
+}

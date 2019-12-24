@@ -1,0 +1,52 @@
+.div-list-item {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding: .3rem;
+  margin: .3rem 0rem;
+  border: 1px solid #F90;
+  /* border-left: 1px solid #F90;
+  border-right: 1px solid #F90; */
+}
+
+.div-item-name {
+  display: flex;
+  color: #F90;
+  margin-bottom: 1rem;
+}
+
+.div-item-name>.time {
+  color: #bb7000;
+  margin-left: 1rem;
+}
+
+.div-content {
+  display: flex;
+  flex-direction: row;
+  max-width: 800px;
+}
+
+.div-content>.div-item-content {
+  font-size: .9rem;
+}
+
+.div-comment-list {
+  margin: 1rem;
+}
+
+.div-comment-list>.div-comment {
+  display: flex;
+  padding: .3rem;
+  margin: .2rem 0;
+  border: 1px solid #F90;
+}
+
+.div-comment>.div-comment-centent {
+  font-size: .9rem;
+  margin: 0 .5rem;
+}
+
+.a-more-comments {
+  color: #F90;
+  text-decoration: none;
+}

@@ -8,6 +8,7 @@
 }
 
 .div-preview>img {
+  cursor: zoom-in;
   border: 1px solid #cecece;
   padding: .2rem;
 }

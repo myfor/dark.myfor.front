@@ -50,4 +50,8 @@ export class PreviewImageComponent implements OnInit {
         }
         this.fileChangeEvent.emit(this.selectedFile);
     }
+
+    previewImg() {
+        window.open(this.preview.nativeElement.src);
+    }
 }

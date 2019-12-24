@@ -1,6 +1,6 @@
 <div class="div-preview-image">
   <input class="inp-file" type="file" #file (change)="fileChange()" accept="{{accept}}" />
   <div class="div-preview">
-    <img #preview src="{{initPath}}" alt="图片预览" [hidden]="!selectedFile" [ngStyle]="imgStyle">
+    <img #preview src="{{initPath}}" alt="图片预览" [hidden]="!selectedFile" [ngStyle]="imgStyle" (click)="previewImg()">
   </div>
 </div>

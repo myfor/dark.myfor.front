@@ -2,7 +2,8 @@
   <div>
     <div class="div-list-item" *ngFor="let post of list; let i = index">
       <div class="div-item-name">
-        <span class="name" title="回复" (click)="triggerReplyBox(i)">{{post.nickName}}</span>
+        <span class="id">{{post.id}}</span>
+        <span class="name" title="回复" (click)="triggerReplyBox(i)">@ {{post.nickName}}</span>
         <div class="time">from: {{post.date}}</div>
       </div>
       <div class="div-content">
@@ -16,7 +17,7 @@
       <!-- 回复 -->
       <div class="div-comment-new" *ngIf="post.showReplyBox">
         回复 {{post.nickName}}
-        <app-new-comment></app-new-comment>
+        <app-new-comment [postId]="post.id"></app-new-comment>
       </div>
 
       <!-- 评论 -->
@@ -36,5 +37,5 @@
 
     </div>
   </div>
-  <app-paginator (pageIndex)="changePage($event)" [totalRows]="totalRows"></app-paginator>
+  <app-paginator *ngIf="list.length" (pageIndex)="changePage($event)" [totalRows]="totalRows"></app-paginator>
 </div>

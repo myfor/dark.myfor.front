@@ -53,11 +53,11 @@ export class PostsService {
    * 获取帖子列表
    */
   getPosts(index: number, rows: number): Observable<Result<Paginator<PostItem>>> {
-    const url = `assets/mocks/posts.json`;
+    // const url = `assets/mocks/posts.json`;
     const param = new HttpParams()
       .set('index', index.toString())
       .set('rows', rows.toString());
-    // const url = `api/posts?${param.toString()}`;
+    const url = `api/posts?${param.toString()}`;
     return this.http.get<Result<Paginator<PostItem>>>(url)
       .pipe(
         debounceTime(1000),

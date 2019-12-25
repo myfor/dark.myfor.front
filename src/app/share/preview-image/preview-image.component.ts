@@ -64,7 +64,7 @@ export class PreviewImageComponent implements OnInit {
                 this.fileList.push(imgInfo);
             }
             this.file.nativeElement.value = null;
-            this.multipleFilesChangeEvent.emit(this.fileList);
+            this.multipleFilesChangeEvent.emit(this.getOutInputFiles());
         } else {
             if (eleFiles.length) {
                 this.selectedFile = eleFiles[0];
@@ -72,6 +72,14 @@ export class PreviewImageComponent implements OnInit {
             }
             this.fileChangeEvent.emit(this.selectedFile);
         }
+    }
+
+    private getOutInputFiles(): any[] {
+        const files: any[] = [];
+        this.fileList.forEach(file => {
+            files.push(file.file);
+        });
+        return files;
     }
 
     previewImg(index: number) {

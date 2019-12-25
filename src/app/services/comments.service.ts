@@ -33,8 +33,8 @@ export class CommentsService {
    * @param postId 帖子 ID
    */
   getAllComments(postId: number): Observable<Result<CommentItem[]>> {
-    // const url = `api/comments?postId=${postId}`;
-    const url = `assets/mocks/comments.json`;
+    const url = `api/comments?postId=${postId}`;
+    // const url = `assets/mocks/comments.json`;
     return this.http.get<Result<CommentItem[]>>(url)
       .pipe(
         debounceTime(1000),
@@ -51,7 +51,7 @@ export class CommentsService {
     newCommentForm.set('content', info.content);
     if (info.images) {
         info.images.forEach(img => {
-        newCommentForm.set('images', img);
+        newCommentForm.append('images', img);
       });
     }
     return this.http.post<Result>(url, newCommentForm)

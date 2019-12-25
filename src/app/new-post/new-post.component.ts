@@ -19,7 +19,7 @@ export class NewPostComponent implements OnInit {
   @ViewChild('postBtn', { static: false }) postBtn: ElementRef;
 
   newPostForm = this.fb.group({
-    nickName: ['', [Validators.required]],
+    nickName: ['匿名', [Validators.required]],
     content: ['', [Validators.required, Validators.minLength(8)]]
   });
 
@@ -59,7 +59,7 @@ export class NewPostComponent implements OnInit {
     this.post.newPost(info)
       .subscribe((data) => {
         if (data.isFault) {
-          this.snack.open('提交失败');
+          this.snack.open(data.message);
           return;
         }
         this.snack.open('提交成功');

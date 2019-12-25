@@ -16,6 +16,11 @@
   margin-bottom: 1rem;
 }
 
+.div-item-name>.id {
+  color: gray;
+  margin-right: .5rem;
+}
+
 .div-item-name>.name {
   color: #2196f3;
   cursor: pointer;

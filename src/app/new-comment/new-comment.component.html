@@ -7,7 +7,7 @@
       </div>
       <div class="fom-new-txt">
         <input type="text" formControlName="nickName" placeholder="昵称 NickName">
-        <textarea cols="30" rows="6" formControlName="content" placeholder="内容 Content"></textarea>
+        <textarea cols="30" rows="6" formControlName="content" placeholder="内容最少 4 个字 Content"></textarea>
       </div>
     </div>
     <div class="div-img-box">
@@ -15,7 +15,7 @@
         <label class="lbl-img" for="txt_img">图片</label>
       </div>
       <div class="div-img-preview">
-        <preview-image maxWidth="250px" maxHeight="140px" multiple="true" (fileChangeEvent)="fileChange($event)"></preview-image>
+        <preview-image maxWidth="250px" maxHeight="140px" multiple="true" (multipleFilesChangeEvent)="fileChange($event)"></preview-image>
       </div>
     </div>
     <div class="div-action">

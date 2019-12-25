@@ -21,8 +21,15 @@ multiple: 可预览多个图片, 默认 false
 ```
 
 ## 事件
-fileChangeEvent: 当预览图改变时发射触发, 发射改变后的图片, 格式为 any
-any 为图片本身, 可以直接在 form 表单中提交. 若 multiple="true" 返回的图片格式为 any[]
+fileChangeEvent: 当预览图改变时发射触发, 发射改变后的图片, 格式为 any, 只使用单张图片
+any 为图片本身, 可以直接在 form 表单中提交. 
+multipleFilesChangeEvent: 若 multiple="true" 返回的图片格式为 any[], 为多张图片
+
+单张图片
 ```html
 <preview-image (fileChangeEvent)="fileChange($event)"></preview-image>
+```
+多张图片
+```html
+<preview-image (fileChangeEvent)="multipleFilesChangeEvent($event)"></preview-image>
 ```

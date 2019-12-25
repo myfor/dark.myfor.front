@@ -17,7 +17,6 @@ export class AppComponent implements OnInit {
     interval(1000).subscribe(() => {
       //  用于检测当前是否是开放时间
       this.setCurrentTime();
-      // console.log(this.hour);
     });
   }
   /**
@@ -32,7 +31,6 @@ export class AppComponent implements OnInit {
     seconds = seconds.length === 2 ? seconds : `0${seconds}`;
 
     this.currentTime = `${this.hour}:${minutes}:${seconds}`;
-    // this.currentTime = dateTime.toString();
 
     //  开放时间
     if (this.hour >= 6) {

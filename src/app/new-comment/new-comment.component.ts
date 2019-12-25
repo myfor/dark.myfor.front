@@ -20,7 +20,7 @@ export class NewCommentComponent implements OnInit {
   @ViewChild('commentBtn', { static: false }) commentBtn: ElementRef;
 
   newCommentForm = this.fb.group({
-    nickName: ['', [Validators.required]],
+    nickName: ['匿名', [Validators.required]],
     content: ['', [Validators.minLength(4)]]
   });
 

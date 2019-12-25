@@ -3,6 +3,15 @@ import { PostsService, PostItem } from '../services/posts.service';
 import { SnackBarService } from '../share/services/snack-bar.service';
 import { CommentItem, CommentsService } from '../services/comments.service';
 
+/**
+ * 图片可放大
+ */
+const RPEVIEWABLE = 'previewable';
+/**
+ * 图片可缩小
+ */
+const SHRINKABLE = 'shrinkable';
+
 @Component({
   selector: 'app-posts',
   templateUrl: './posts.component.html',
@@ -14,14 +23,6 @@ export class PostsComponent implements OnInit {
   private index = 1;
   private readonly rows = 20;
   totalRows = 0;
-  /**
-   * 图片可放大
-   */
-  private readonly previewable = 'previewable';
-  /**
-   * 图片可缩小
-   */
-  private readonly shrinkable = 'shrinkable';
 
   constructor(
     private post: PostsService,
@@ -51,7 +52,7 @@ export class PostsComponent implements OnInit {
   private setPostList(posts: PostItem[]) {
     posts.forEach(item => {
       item.img.current = item.img.thumbnail;
-      item.img.style = this.previewable;
+      item.img.style = RPEVIEWABLE;
       item.comments = this.setCommentList(item.comments);
       item.hasMoreComments = item.comments.length >= 5;
       item.showReplyBox = false;
@@ -66,7 +67,7 @@ export class PostsComponent implements OnInit {
     comments.forEach(comment => {
       comment.imgs.forEach(img => {
         img.current = img.thumbnail;
-        img.style = this.previewable;
+        img.style = RPEVIEWABLE;
       });
     });
     return comments;
@@ -95,7 +96,7 @@ export class PostsComponent implements OnInit {
    */
   changePostImg(i: number) {
     const post = this.list[i];
-    post.img.style = post.img.style === this.previewable ? this.shrinkable : this.previewable;
+    post.img.style = post.img.style === RPEVIEWABLE ? SHRINKABLE : RPEVIEWABLE;
     post.img.current = post.img.current === post.img.source ? post.img.thumbnail : post.img.source;
   }
   /**
@@ -106,7 +107,7 @@ export class PostsComponent implements OnInit {
    */
   changeCommentImg(i: number, commentIndex: number, imgIndex: number) {
     const img = this.list[i].comments[commentIndex].imgs[imgIndex];
-    img.style = img.style === this.previewable ? this.shrinkable : this.previewable;
+    img.style = img.style === RPEVIEWABLE ? SHRINKABLE : RPEVIEWABLE;
     img.current = img.current === img.source ? img.thumbnail : img.source;
   }
   /**

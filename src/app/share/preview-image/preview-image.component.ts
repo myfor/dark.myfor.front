@@ -9,6 +9,11 @@ const DEFAULT_MAX_WIDTH = '25rem';
  */
 const DEFAULT_MAX_HEIGHT = '15rem';
 
+export interface ImgInfo {
+    path: string;
+    file: any;
+}
+
 @Component({
     // tslint:disable-next-line: component-selector
     selector: 'preview-image',
@@ -22,8 +27,13 @@ export class PreviewImageComponent implements OnInit {
         'max-height': DEFAULT_MAX_HEIGHT
     };
 
-    @Input() initPath = '';
+    fileList: ImgInfo[] = [];
 
+    @Input() initPath = '';
+    /**
+     * 是否支持多个图片
+     */
+    @Input() multiple = false;
     @Input() set maxWidth(width: string) {
         this.imgStyle['max-width'] = width ? width : DEFAULT_MAX_WIDTH;
     }
@@ -33,6 +43,7 @@ export class PreviewImageComponent implements OnInit {
     @Input() accept = '.png,.jpg,.jpeg,.gif,.bmp';
 
     @Output() fileChangeEvent = new EventEmitter<any>();
+    @Output() multipleFilesChangeEvent = new EventEmitter<any[]>();
 
     selectedFile: any;
     @ViewChild('file', {static: false}) file: ElementRef;
@@ -44,14 +55,34 @@ export class PreviewImageComponent implements OnInit {
 
     fileChange() {
         const eleFiles = this.file.nativeElement.files;
-        if (eleFiles.length) {
-            this.selectedFile = eleFiles[0];
-            this.preview.nativeElement.src = window.URL.createObjectURL(eleFiles[0]);
+        if (this.multiple) {
+            if (eleFiles.length) {
+                const imgInfo: ImgInfo = {
+                    path: window.URL.createObjectURL(eleFiles[0]),
+                    file: eleFiles[0]
+                };
+                this.fileList.push(imgInfo);
+            }
+            this.multipleFilesChangeEvent.emit(this.fileList);
+        } else {
+            if (eleFiles.length) {
+                this.selectedFile = eleFiles[0];
+                this.preview.nativeElement.src = window.URL.createObjectURL(eleFiles[0]);
+            }
+            this.fileChangeEvent.emit(this.selectedFile);
         }
-        this.fileChangeEvent.emit(this.selectedFile);
     }
 
-    previewImg() {
-        window.open(this.preview.nativeElement.src);
+    previewImg(index: number) {
+        if (this.multiple) {
+            // console.log(index);
+            window.open(this.fileList[index].path);
+        } else {
+            window.open(this.preview.nativeElement.src);
+        }
+    }
+
+    closeImg(index: number) {
+        this.fileList.splice(index, 1);
     }
 }

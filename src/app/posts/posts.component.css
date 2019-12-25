@@ -17,7 +17,7 @@
 }
 
 .div-item-name>.name {
-  color: #F90;
+  color: #2196f3;
   cursor: pointer;
   text-decoration: underline;
 }
@@ -61,4 +61,8 @@
 .a-more-comments {
   color: #F90;
   text-decoration: none;
+}
+
+.div-comment-new {
+  color: #F90;
 }

@@ -2,5 +2,6 @@
   <input class="inp-file" type="file" #file (change)="fileChange()" accept="{{accept}}" />
   <div class="div-preview">
     <img #preview src="{{initPath}}" alt="图片预览" [hidden]="!selectedFile" [ngStyle]="imgStyle" (click)="previewImg()">
+    <img class="img-list-item" *ngFor="let img of fileList; let i = index" [src]="img.path | safeUrl" alt="图片" (click)="previewImg(i)">
   </div>
 </div>

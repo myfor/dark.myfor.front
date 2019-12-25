@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { PostsService, PostItem } from '../services/posts.service';
-import { SnackBarService } from '../share/service/snack-bar.service';
+import { SnackBarService } from '../share/services/snack-bar.service';
 import { CommentItem, CommentsService } from '../services/comments.service';
 
 @Component({

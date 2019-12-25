@@ -1,6 +1,6 @@
 import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
-import { SnackBarService } from '../share/service/snack-bar.service';
+import { SnackBarService } from '../share/services/snack-bar.service';
 import { NewPost, PostsService } from '../services/posts.service';
 import { timer } from 'rxjs';
 

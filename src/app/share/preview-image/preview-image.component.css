@@ -13,6 +13,11 @@
   padding: .2rem;
 }
 
+.img-list-item {
+  max-width: 100px;
+  max-height: 100px;
+}
+
 .inp-file {
   cursor: pointer;
   width: 100%;

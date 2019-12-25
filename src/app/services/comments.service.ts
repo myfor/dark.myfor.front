@@ -4,6 +4,13 @@ import { BaseService, Result, Img } from './common';
 import { Observable } from 'rxjs';
 import { catchError, debounceTime, retry } from 'rxjs/operators';
 
+export interface NewComment {
+  postId: number;
+  nickName: string;
+  content: string;
+  images: any[];
+}
+
 export interface CommentItem {
   nickName: string;
   content: string;
@@ -32,6 +39,24 @@ export class CommentsService {
       .pipe(
         debounceTime(1000),
         retry(2),
+        catchError(this.baseService.handleError)
+      );
+  }
+
+  newComment(info: NewComment): Observable<Result> {
+    const url = `api/comments`;
+    const newCommentForm = new FormData();
+    newCommentForm.set('postId', info.postId.toString());
+    newCommentForm.set('nickName', info.nickName);
+    newCommentForm.set('content', info.content);
+    if (info.images) {
+        info.images.forEach(img => {
+        newCommentForm.set('images', img);
+      });
+    }
+    return this.http.post<Result>(url, newCommentForm)
+      .pipe(
+        debounceTime(1000),
         catchError(this.baseService.handleError)
       );
   }

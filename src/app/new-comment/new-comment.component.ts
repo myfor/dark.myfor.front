@@ -1,6 +1,7 @@
-import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef, Input } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
-import { SnackBarService } from '../share/service/snack-bar.service';
+import { SnackBarService } from '../share/services/snack-bar.service';
+import { CommentsService, NewComment } from '../services/comments.service';
 import { timer } from 'rxjs';
 
 @Component({
@@ -15,6 +16,7 @@ export class NewCommentComponent implements OnInit {
    * 图片
    */
   img: any;
+  @Input() postId: number;
   @ViewChild('commentBtn', { static: false }) commentBtn: ElementRef;
 
   newCommentForm = this.fb.group({
@@ -25,6 +27,7 @@ export class NewCommentComponent implements OnInit {
   constructor(
     private fb: FormBuilder,
     private snack: SnackBarService,
+    private comment: CommentsService
   ) { }
 
   ngOnInit() {
@@ -34,7 +37,10 @@ export class NewCommentComponent implements OnInit {
     this.img = selectedFile;
   }
 
-  submit(btn: any) {
+  submit() {
+    if (!this.postId) {
+      this.snack.open('无法提交回复');
+    }
     if (this.newCommentForm.get('nickName').invalid) {
       this.snack.open('昵称不能为空');
       return;
@@ -49,5 +55,21 @@ export class NewCommentComponent implements OnInit {
       this.commentBtn.nativeElement.disabled = false;
     });
 
+    const info: NewComment = {
+      postId: this.postId,
+      nickName: this.newCommentForm.get('nickName').value,
+      content: this.newCommentForm.get('content').value,
+      images: this.img ? [this.img] : []
+    };
+    this.comment.newComment(info)
+      .subscribe((data) => {
+        if (data.isFault) {
+          this.snack.open(data.message);
+          return;
+        }
+        this.newCommentForm.get('nickName').setValue('');
+        this.newCommentForm.get('content').setValue('');
+        this.img = null;
+      });
   }
 }

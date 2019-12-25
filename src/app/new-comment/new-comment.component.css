@@ -1,71 +1,70 @@
 .fom-new {
-    display: flex;
-    justify-content: center;
-  }
-  
-  .fom-new-lbl {
-    display: flex;
-    flex-direction: column;
-    margin-right: .5rem;
-  }
-  
-  .fom-new-lbl * {
-    color: #F90;
-  }
-  
-  .fom-new-lbl>label {
-    width: 100px;
-    padding: .2rem 0rem;
-    margin-bottom: .3rem;
-    border: 1px solid #F90;
-    text-align: center;
-  }
-  
-  .fom-new-txt {
-    display: flex;
-    flex-direction: column;
-  }
-  
-  .fom-new-txt input {
-    color: #000;
-    margin-bottom: .7rem;
-  }
-  
-  .fom-new-txt textarea {
-    color: #000;
-    margin-bottom: .7rem;
-  }
-  
-  .div-img-box {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-  }
-  
-  .div-img {
-    display: flex;
-    height: 34px;
-    width: 100px;
-    padding: .2rem 0rem;
-    margin-bottom: .3rem;
-  }
-  
-  .div-img-preview {
-    width: 235px;
-    margin-left: .4rem;
-  }
-  
-  .lbl-img {
-    color: #F90;
-    width: 100px;
-    padding: .2rem 0rem;
-    margin-bottom: .3rem;
-    border: 1px solid #F90;
-    text-align: center;
-  }
-  
-  .fil-img {
-    width: 235px;
-    margin-left: .5rem;
-  }
-  
+  display: flex;
+  justify-content: center;
+}
+
+.fom-new-lbl {
+  display: flex;
+  flex-direction: column;
+  margin-right: .5rem;
+}
+
+.fom-new-lbl * {
+  color: #F90;
+}
+
+.fom-new-lbl>label {
+  width: 100px;
+  padding: .2rem 0rem;
+  margin-bottom: .3rem;
+  border: 1px solid #F90;
+  text-align: center;
+}
+
+.fom-new-txt {
+  display: flex;
+  flex-direction: column;
+}
+
+.fom-new-txt input {
+  color: #000;
+  margin-bottom: .7rem;
+}
+
+.fom-new-txt textarea {
+  color: #000;
+  margin-bottom: .7rem;
+}
+
+.div-img-box {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.div-img {
+  display: flex;
+  height: 34px;
+  width: 100px;
+  padding: .2rem 0rem;
+  margin-bottom: .3rem;
+}
+
+.div-img-preview {
+  width: 235px;
+  margin-left: .4rem;
+}
+
+.lbl-img {
+  color: #F90;
+  width: 100px;
+  padding: .2rem 0rem;
+  margin-bottom: .3rem;
+  border: 1px solid #F90;
+  text-align: center;
+}
+
+.fil-img {
+  width: 235px;
+  margin-left: .5rem;
+}

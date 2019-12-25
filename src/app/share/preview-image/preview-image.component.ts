@@ -63,6 +63,7 @@ export class PreviewImageComponent implements OnInit {
                 };
                 this.fileList.push(imgInfo);
             }
+            this.file.nativeElement.value = null;
             this.multipleFilesChangeEvent.emit(this.fileList);
         } else {
             if (eleFiles.length) {
@@ -82,7 +83,7 @@ export class PreviewImageComponent implements OnInit {
         }
     }
 
-    closeImg(index: number) {
+    close(index: number) {
         this.fileList.splice(index, 1);
     }
 }

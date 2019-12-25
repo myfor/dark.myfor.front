@@ -7,10 +7,26 @@
   margin: .2rem 0;
 }
 
-.div-preview>img {
+.div-preview img {
   cursor: zoom-in;
   border: 1px solid #cecece;
   padding: .2rem;
+}
+
+.div-img-box {
+  display: flex;
+}
+
+.div-img-item {
+  position: relative;
+  width: fit-content;
+}
+
+.div-img-item .img-close {
+  position: absolute;
+  right: 0;
+  top: 0;
+  cursor: pointer;
 }
 
 .img-list-item {

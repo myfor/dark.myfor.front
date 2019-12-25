@@ -5,8 +5,8 @@
       "content": "匿名评论内容匿名评论内容匿名评论内容匿名评论内容",
       "date": "05:00",
       "imgs": [{
-        "thumbnail": "assets/img/战双-帕泥什.png",
-        "source": "assets/img/dg.gif"
+        "thumbnail": "assets/img/thumbnail.png",
+        "source": "assets/img/source.gif"
       }]
     },
     {
@@ -14,12 +14,12 @@
       "content": "匿名评论内容匿名评论内容匿名评论内容匿名评论内容",
       "date": "05:00",
       "imgs": [{
-          "thumbnail": "assets/img/战双-帕泥什.png",
-          "source": "assets/img/dg.gif"
+          "thumbnail": "assets/img/thumbnail.png",
+          "source": "assets/img/source.gif"
         },
         {
-          "thumbnail": "assets/img/战双-帕泥什.png",
-          "source": "assets/img/dg.gif"
+          "thumbnail": "assets/img/thumbnail.png",
+          "source": "assets/img/source.gif"
         }
       ]
     }

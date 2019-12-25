@@ -15,7 +15,7 @@ export class NewCommentComponent implements OnInit {
   /**
    * 图片
    */
-  img: any;
+  img: any[] = [];
   @Input() postId: number;
   @ViewChild('commentBtn', { static: false }) commentBtn: ElementRef;
 
@@ -33,8 +33,8 @@ export class NewCommentComponent implements OnInit {
   ngOnInit() {
   }
 
-  fileChange(selectedFile: any) {
-    this.img = selectedFile;
+  fileChange(selectedFiles: any[]) {
+    this.img = selectedFiles;
   }
 
   submit() {
@@ -59,7 +59,7 @@ export class NewCommentComponent implements OnInit {
       postId: this.postId,
       nickName: this.newCommentForm.get('nickName').value,
       content: this.newCommentForm.get('content').value,
-      images: this.img ? [this.img] : []
+      images: this.img
     };
     this.comment.newComment(info)
       .subscribe((data) => {

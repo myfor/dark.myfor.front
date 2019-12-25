@@ -13,7 +13,8 @@
 # profiling files
 chrome-profiler-events*.json
 speed-measure-plugin*.json
-/src/assets/img/
+/src/assets/img/source.gif
+/src/assets/img/thumbnail.png
 
 /e2e
 
